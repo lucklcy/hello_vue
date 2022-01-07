@@ -1,0 +1,138 @@
+@ppd-main-color: #5d80ed;
+@border-color: #dae0ec;
+
+.setFlexPos(@direction; @xPos;@yPos) {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: @direction;
+  justify-content: @xPos;
+  align-items: @yPos;
+}
+
+.border-set(@position, @color, @width: 2px, @radius: 0px) when(@position = bottom) {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: @width;
+    transform-origin: 0 0;
+    background-color: @color;
+  }
+}
+
+.border-set(@position, @color, @width: 2px, @radius: 0px) when(@position = top) {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 100%;
+    height: @width;
+    transform-origin: 0 0;
+    background-color: @color;
+  }
+}
+
+.border-set(@position, @color, @width: 2px, @radius: 0px) when(@position = left) {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 1px;
+    top: 0;
+    width: @width;
+    height: 100%;
+    transform-origin: 0 0;
+    background-color: @color;
+  }
+}
+
+.border-set(@position, @color, @width: 2px, @radius: 0px) when(@position = right) {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    box-sizing: border-box;
+    right: 1px;
+    top: 0;
+    width: @width;
+    height: 100%;
+    transform-origin: 0 0;
+    background-color: @color;
+  }
+}
+
+.border-set(@position, @color, @width: 2px, @radius: 0px) when(@position = all) {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border: @width solid @color;
+    border-radius: @radius;
+  }
+}
+
+.setSize(@width; @height) {
+  width: @width;
+  height: @height;
+}
+
+.setBgImg(@url; @position-horizontal;@position-vertical; @size; @repeat) when(isstring(@url)) {
+  background-image: url(@url);
+  background-position: @position-horizontal @position-vertical;
+  background-size: @size;
+  background-repeat: @repeat;
+}
+
+.setBgImg(@url; @position-horizontal;@position-vertical; @size; @repeat) when not (isstring(@url)) {
+  background-position: @position-horizontal @position-vertical;
+  background-size: @size;
+  background-repeat: @repeat;
+}
+
+.setPosition(@position; @top; @right; @bottom; @left) {
+  position: @position;
+  top: @top;
+  right: @right;
+  bottom: @bottom;
+  left: @left;
+}
+
+.nodata(@width; @height) {
+  width: @width;
+  height: @height;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg width='135' height='140' viewBox='0 0 135 140' xmlns='http://www.w3.org/2000/svg' fill='%23dae0ec'%3E %3Crect y='10' width='15' height='120' rx='6'%3E %3Canimate attributeName='height' begin='0.5s' dur='1s' values='120;110;100;90;80;70;60;50;40;140;120' calcMode='linear' repeatCount='indefinite' /%3E %3Canimate attributeName='y' begin='0.5s' dur='1s' values='10;15;20;25;30;35;40;45;50;0;10' calcMode='linear' repeatCount='indefinite' /%3E %3C/rect%3E %3Crect x='30' y='10' width='15' height='120' rx='6'%3E %3Canimate attributeName='height' begin='0.25s' dur='1s' values='120;110;100;90;80;70;60;50;40;140;120' calcMode='linear' repeatCount='indefinite' /%3E %3Canimate attributeName='y' begin='0.25s' dur='1s' values='10;15;20;25;30;35;40;45;50;0;10' calcMode='linear' repeatCount='indefinite' /%3E %3C/rect%3E %3Crect x='60' width='15' height='140' rx='6'%3E %3Canimate attributeName='height' begin='0s' dur='1s' values='120;110;100;90;80;70;60;50;40;140;120' calcMode='linear' repeatCount='indefinite' /%3E %3Canimate attributeName='y' begin='0s' dur='1s' values='10;15;20;25;30;35;40;45;50;0;10' calcMode='linear' repeatCount='indefinite' /%3E %3C/rect%3E %3Crect x='90' y='10' width='15' height='120' rx='6'%3E %3Canimate attributeName='height' begin='0.25s' dur='1s' values='120;110;100;90;80;70;60;50;40;140;120' calcMode='linear' repeatCount='indefinite' /%3E %3Canimate attributeName='y' begin='0.25s' dur='1s' values='10;15;20;25;30;35;40;45;50;0;10' calcMode='linear' repeatCount='indefinite' /%3E %3C/rect%3E %3Crect x='120' y='10' width='15' height='120' rx='6'%3E %3Canimate attributeName='height' begin='0.5s' dur='1s' values='120;110;100;90;80;70;60;50;40;140;120' calcMode='linear' repeatCount='indefinite' /%3E %3Canimate attributeName='y' begin='0.5s' dur='1s' values='10;15;20;25;30;35;40;45;50;0;10' calcMode='linear' repeatCount='indefinite' /%3E %3C/rect%3E %3C/svg%3E ");
+}
+
+.scrollBar() {
+  &::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 4px; /*高宽分别对应横竖滚动条的尺寸*/
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 4px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: #000;
+  }
+
+  &::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    background: #444;
+  }
+}

@@ -1,0 +1,70 @@
+html,
+body {
+  font-size: 25px !important;
+  position: relative;
+  height: 100%;
+  /* 增加该属性，可以增加弹性 */
+  -webkit-overflow-scrolling: touch;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.clearfix:after {
+  content: '.';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.ubox {
+  display: flex;
+  display: -webkit-flex !important;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.ubox-f1 {
+  flex: 1;
+  -webkit-flex: 1;
+}
+
+* {
+  box-sizing: border-box;
+  &:focus {
+    outline: none;
+  }
+}
+
+.el-tooltip__popper {
+  max-width: 320px;
+  &.is-dark {
+    line-height: 1.4;
+  }
+}
+
+.cell {
+  .el-button + .el-button {
+    margin-left: 0px;
+  }
+}
+
+.common-table-header {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgb(16, 42, 95);
+}
+
+.pagination {
+  margin: 12px auto 2px auto;
+  text-align: center;
+}
