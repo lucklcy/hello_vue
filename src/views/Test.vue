@@ -1,6 +1,6 @@
 <template>
   <div class="test-page-wrap">
-    <h1>test</h1>
+    <div>test</div>
   </div>
 </template>
 <script>
@@ -20,5 +20,7 @@ export default {
 <style lang="less" scoped>
 .test-page-wrap {
   background-color: #fff;
+  .setSize(100%,100%);
+  padding: 6px;
 }
 </style>

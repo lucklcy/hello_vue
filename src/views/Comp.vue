@@ -44,5 +44,7 @@ export default {
 <style lang="less" scoped>
 .component-study-wrap {
   background-color: #fff;
+  padding: 6px;
+  .setSize(100%,100%);
 }
 </style>

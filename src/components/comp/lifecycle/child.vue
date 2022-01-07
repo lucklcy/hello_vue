@@ -1,6 +1,6 @@
 <template>
   <div class="child-page-wrap">
-    <h1>Child</h1>
+    <h1>Child:{{ test_data.count }}</h1>
   </div>
 </template>
 <script>
@@ -8,7 +8,14 @@ export default {
   data() {
     return {};
   },
-  props: {},
+  props: {
+    test_data: {
+      type: Object,
+      default() {
+        return {};
+      },
+    },
+  },
   computed: {},
   components: {},
   watch: {},

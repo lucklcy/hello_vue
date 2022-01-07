@@ -1,20 +1,30 @@
 <template>
   <div class="parent-page-wrap">
     <span>Parent</span>
-    <Child></Child>
+    <Child :test_data="test_data"></Child>
+    <button @click="onAdd">add</button>
   </div>
 </template>
 <script>
 import Child from "~/comp/lifecycle/child";
 export default {
   data() {
-    return {};
+    return {
+      test_data: {
+        count: 0,
+      },
+    };
   },
   props: {},
   computed: {},
   components: { Child },
   watch: {},
-  methods: {},
+  methods: {
+    onAdd() {
+      let { count } = this.test_data;
+      Object.assign(this.test_data, { count: ++count });
+    },
+  },
   beforeCreate() {
     console.log("parent component beforeCreate!");
   },
