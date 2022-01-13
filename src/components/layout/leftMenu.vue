@@ -44,6 +44,14 @@ const menuList = [
     title: "组件学习",
     children: [{ title: "父子组件生命周期", path: "/comp" }],
   },
+  {
+    title: "SVG学习",
+    children: [{ title: "营销海报", path: "/svg/poster" }],
+  },
+  {
+    title: "CANVAS",
+    children: [{ title: "FABRIC", path: "/canvas/fabric" }],
+  },
 ];
 export default {
   name: "left-menu",

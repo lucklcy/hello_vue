@@ -3,7 +3,7 @@
     <div class="left-container" :class="{ collapse: isCollapse }">
       <div class="logo">
         <img :src="logoPic" class="logo-pic" />
-        <span v-if="!isCollapse">XXXX平台</span>
+        <span v-if="!isCollapse">VUE2</span>
         <i
           class="menu-collapse-btn"
           :class="{
@@ -87,7 +87,8 @@ export default {
         padding: 4px;
       }
       .logo-pic {
-        .setSize(38px, auto);
+        .setSize(28px, auto);
+        border-radius: 50%;
       }
     }
     .left-menu-vertical {
@@ -104,11 +105,11 @@ export default {
       background-color: #fff;
       .right-header {
         .setFlexPos(row, space-between, center);
-        .setSize(150px, auto);
+        .setSize(80px, auto);
       }
     }
     .main-container {
-      padding: 10px;
+      padding: 6px;
       .setSize(100%, calc(100% - 60px));
     }
   }
