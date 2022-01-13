@@ -45,9 +45,8 @@ module.exports = {
     https: false,
     proxy: {
       // 配置跨域处理 配置多个代理
-      // 多环境: 10.114.5.177 h5gateway.ppdapi.com
       "^/api": {
-        target: "http://fat-h5gateway.ppdapi.com",
+        target: "http://xxx.lucklcy.top",
         changeOrigin: true,
         logLevel: "debug",
         pathRewrite: {},
