@@ -7,7 +7,8 @@ import SvgIndex from "@/views/SvgDot/index";
 import SvgPoster from "@/views/SvgDot/Poster";
 import CanvasIndex from "@/views/Canvas/index";
 import CanvasFabric from "@/views/Canvas/fabric";
-
+import CssIndex from "@/views/ICss/index";
+import CssGrid from "@/views/ICss/grid";
 Vue.use(VueRouter);
 
 const routes = [
@@ -72,6 +73,24 @@ const routes = [
           breadcrumb: [
             { path: "/", title: "首页" },
             { path: "/canvas", title: "营销海报" },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    path: "/css",
+    name: "r_css_index",
+    component: CssIndex,
+    children: [
+      {
+        path: "grid",
+        name: "r_css_grid",
+        component: CssGrid,
+        meta: {
+          breadcrumb: [
+            { path: "/", title: "css" },
+            { path: "/grid", title: "grid布局" },
           ],
         },
       },

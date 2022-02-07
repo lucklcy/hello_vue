@@ -76,7 +76,7 @@ export default {
     }
     background-color: #1e2b3d;
     .logo {
-      .setSize(100%, 60px);
+      .setSize(100%, 40px);
       .setFlexPos(row, space-around, center);
       color: #fff;
       padding: 4px 0;
@@ -98,7 +98,7 @@ export default {
   .right-container {
     .setSize(100%, 100%);
     header {
-      .setSize(100%, 60px);
+      .setSize(100%, 40px);
       padding: 0 20px;
       .setFlexPos(row, space-between, center);
       border-bottom: 1px solid @border-color;

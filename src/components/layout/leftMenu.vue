@@ -52,6 +52,10 @@ const menuList = [
     title: "CANVAS",
     children: [{ title: "FABRIC", path: "/canvas/fabric" }],
   },
+  {
+    title: "CSS",
+    children: [{ title: "CSS学习一", path: "/css/grid" }],
+  },
 ];
 export default {
   name: "left-menu",
@@ -66,3 +70,26 @@ export default {
   },
 };
 </script>
+<style lang="less">
+.el-submenu {
+  .el-menu-item,
+  .el-submenu__title {
+    height: 46px;
+    line-height: 46px;
+  }
+  .el-menu {
+    .el-menu-item {
+      height: 42px;
+      line-height: 42px;
+    }
+  }
+  span[slot="title"] {
+    font-size: 12px;
+    font-weight: 300;
+  }
+  i.el-icon-menu,
+  i.el-icon-s-unfold {
+    font-size: 14px;
+  }
+}
+</style>
